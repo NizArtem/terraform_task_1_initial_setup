@@ -11,15 +11,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+resource "azurerm_resource_group2" "example2" {
+  name     = "example-resources2"
+  location = "East Europe"
 }
 
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacc"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
+  name                     = "examplestorageacc2"
+  resource_group_name      = azurerm_resource_group2.example2.name
+  location                 = azurerm_resource_group2.example2.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
